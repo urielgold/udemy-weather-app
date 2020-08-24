@@ -8,6 +8,7 @@ const ViewsDir = path.join(__dirname, '../templates/views');
 const partialsDir = path.join(__dirname, '../templates/partials');
 
 const app = express();
+const port = process.env.PORT || 3000;
 const name = 'Uriel';
 
 // Setup handlebars engine and view directory
@@ -63,4 +64,4 @@ app.get('/weather', (req, res) => {
 
 app.get('/*', (_, res) => res.render('404', {title: '404'}));
 
-app.listen(3000, () => console.log('Server is running on port 3000'));
+app.listen(port, () => console.log(`Server is running on port ${port}`));
